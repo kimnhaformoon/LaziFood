@@ -1,0 +1,245 @@
+<%-- 
+    Document   : addNewDish
+    Created on : Jul 15, 2024, 9:14:31 PM
+    Author     : Kim Nha
+--%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trang quản lý</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <style>
+            header {
+                padding: 10px;
+                padding-left: 50px;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 1000;
+                background-color: #d4a7b4;
+            }
+
+            header h2 {
+                margin: 0;
+                color: #fff;
+            }
+
+            .logo-home {
+                width: 200px;
+            }
+
+            .logo-container {
+                align-items: center;
+            }
+
+            .dropdown-menu {
+                border: 1px solid black;
+            }
+
+            #dropdownMenuButton {
+                background-color: black;
+                color: white;
+                border-radius: 50px;
+                padding: 5px 30px;
+            }
+
+            #dropdownMenuButton:hover, #dropdownMenuButton:focus, #dropdownMenuButton:active, #dropdownMenuButton.active {
+                background-color: black;
+                color: white;
+                border-color: black;
+                box-shadow: none;
+            }
+
+            .dropdown-toggle::after {
+                display: none;
+            }
+
+            .dropdown-item {
+                color: black;
+            }
+            .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:active {
+                background-color: #d4a7b4;
+                color: white;
+            }
+
+            #sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 270px;
+                background-color: #000;
+                padding-top: 30px; /* space for header */
+            }
+            #sidebar a {
+                color: #fff;
+                padding: 10px;
+                display: block;
+                margin: 10px 10px;
+            }
+
+            #sidebar a.active {
+                background-color: #fff;
+                color: #000;
+                border-radius: 10px;
+            }
+
+            #sidebar a:hover {
+                background-color: #fff;
+                color: #000;
+                border-radius: 10px;
+            }
+
+            #sidebar h4 {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            #main-content {
+                padding: 30px 40px;
+            }
+            #form-info {
+                width: 50vw;
+            }
+            .form-container {
+                max-width: 60vw;
+                margin: 30px;
+                padding: 30px; 
+                border-radius: 8px; 
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+                display: flex;
+                justify-content: space-around;
+            }
+            .btn:hover {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid" id="header">
+                <div class="row align-items-center">
+                    <div class="col-md-10 row logo-container">
+                        <div class="col-xxl-1 col-xl-3 col-lg-4 col-12 ">
+                            <a href="adminDashBoard"><img class="logo-home" src="images/logo/logohomewhite.png" alt="home-logo"/></a>
+                        </div>
+                        <h2 class="col-xxl-11 col-xl-9 col-lg-8 col-12"><b>Trang quản lý</b></h2>
+                    </div>
+                    <div class="dropdown col-md-2 text-center">
+                        <button class="btn btn-custom dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ${sessionScope.LoginedAccount.username}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Tài khoản của tôi</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logoutAction">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>	
+        <div class="main-body" id="main-body">
+            <div id="sidebar">
+                <a href="adminDashBoard"><i class="bi bi-house-door-fill"></i><h4><b>Trang chủ</b></h4></a>
+                <a href="manageUserAction"><i class="bi bi-people-fill"></i><h4><b>Quản lý người dùng</b></h4></a>
+                <a href="manageOrderPage"><i class="bi bi-journal-text"></i><h4><b>Quản lý đơn hàng</b></h4></a>
+                <a href="manageDishPage"><i class="bi bi-tags-fill"></i><h4><b>Quản lý món ăn</b></h4></a>
+                <a href="manageIngrePage" class="active"><i class="bi bi-tags-fill"></i><h4><b>Quản lý nguyên liệu</b></h4></a>
+                <a href="#"><i class="bi bi-pencil-square"></i><h4><b>Quản lý thực đơn</b></h4></a>
+            </div>
+            <div id="main-content">
+                <h3><b>Chỉnh sửa nguyên liệu</b></h3>
+                <div class="form-container">
+                    <form action="editIngreAction" method="POST" id="form-info">
+                        <div class="form-group">
+                            <label class="mt-3">Tên nguyên liệu</label>
+                            <input type="text" class="form-control" name="txtName" value="${param.ingreName}" placeholder="Nhập tên nguyên liệu" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá</label>
+                            <input type="text" class="form-control" name="txtPrice" value="${param.ingrePrice}" id="price-input" placeholder="Nhập đơn giá" required="">
+                            <p id="error-msg" style="color: red; display: none">Giá tiền không hợp lệ</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn vị</label>
+                            <input type="text" class="form-control" name="txtUnit" value="${param.ingreUnit}" placeholder="Nhập đơn vị" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh</label>
+                            <input type="text" class="form-control" name="txtImage" value="${param.ingreImage}" placeholder="Nhập link ảnh" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Phân loại</label>
+                            <select class="form-control" id="select-category" name="categoryId" required>
+                                <option value="" disabled>Chọn phân loại</option>
+                                <c:forEach var="category" items="${requestScope.LIST_INGREDIENT_CATEGORIES}">
+                                    <option value="${category.id}" <c:if test="${category.id == param.ingreCategory}">selected</c:if>>${category.name}</option>
+                                </c:forEach>
+                            </select>
+                        </div>                     
+                        <div style="width: 100%; display: flex; justify-content: flex-end">
+                            <button type="submit" class="btn btn-dark">Cập nhật</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            const priceInput = document.getElementById('price-input');
+            const errorMsg = document.getElementById('error-msg');
+            const formUpdate = document.getElementById('form-info');
+
+            formUpdate.addEventListener('submit', function (event) {
+                const value = priceInput.value;
+                const isValid = /^-?\d+(\.\d+)?$/.test(value);
+
+                if (!isValid) {
+                    errorMsg.style.display = 'block';
+                    priceInput.style.border = '1px solid red';
+                    event.preventDefault();
+                } else {
+                    errorMsg.style.display = 'none';
+                }
+            });
+
+            function marginSidebar() {
+                var headerHeight = document.querySelector('header').offsetHeight;
+                var windowHeight = window.innerHeight;
+                var sidebar = document.getElementById('sidebar');
+                var mainContent = document.getElementById('main-content');
+                var sidebarWidth = sidebar.offsetWidth;
+
+                var newHeight = windowHeight - headerHeight;
+                sidebar.style.height = newHeight + 'px';
+                sidebar.style.top = headerHeight + 'px';
+                mainContent.style.marginLeft = sidebarWidth + 'px';
+                mainContent.style.marginTop = headerHeight + 'px';
+                // mainContent.style.minHeight = newHeight + 'px';
+            }
+            // Perform initial height adjustment when page loads
+            window.addEventListener('DOMContentLoaded', marginSidebar);
+            // Adjust height again if window is resized
+            window.addEventListener('resize', marginSidebar);
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Link Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

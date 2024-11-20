@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="PE">
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/menudetail.jsp</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/table/customerplans/CustomerPlanDAO.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/homepage.jsp</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/CheckoutServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/CreateNewPlanServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/WEB-INF/siteMap.properties</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/AddMenuToPlanServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/CancelOrderServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/AddDishToMenuServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/ViewMenuDetailServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/productdetail.jsp</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/editmenuview.jsp</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/DeleteMenuServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/DeletePlanServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/DeleteDishFromPlanServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/editplanview.jsp</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/AddToCartServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/AddDishToPlanServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/controllers/DeleteDishFromMenuServlet.java</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/web/WEB-INF/authentication.properties</file>
+            <file>file:/D:/FPT_UNIVERSITY/PRJ301_LaziFood/src/java/table/menu/MenuDAO.java</file>
+        </group>
+        <group/>
+    </open-files>
+</project-private>
